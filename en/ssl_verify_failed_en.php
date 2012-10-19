@@ -1,6 +1,6 @@
 <?php
 	//include check_browser() and get_smartcard_user() functions
-	include "./inc/functions.php";
+	include "../inc/functions.php"
 ?>
 
 
@@ -8,7 +8,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-     <title>eID | eID pārbaudes vietne</title>
+     <title>eID-LV | eID-LV test site</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -45,43 +45,45 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="http://eidtstapa.pmlp.gov.lv">eID</a>
+          <a class="brand" href="http://eidtstapa.pmlp.gov.lv/en">eID</a>
           <div class="nav-collapse">
             <ul class="nav">
-              <li class="active"><a href="http://eidtstapa.pmlp.gov.lv">Home</a></li>
-             
+              <li class="active"><a href="http://eidtstapa.pmlp.gov.lv/en">Home</a></li>
+
 
               
             </ul>
 			</div>
 			<div class="nav-collapse"style="float:right">
 				<ul class="nav">
-				 <li class="active">
 
+				 <li >
 				 <a href="/">LV</a>
 				</li>
-				 <li><a href="/en/ssl_verify_failed_en.php">EN</a></li>
+				 <li class="active"><a href="/en">EN</a></li>
 				 </ul>
           </div><!--/.nav-collapse -->
         </div>
-        </div>
-   
+
+
       </div>
+
+    </div>
 
     <div class="container">
 	<div style="padding-top:30px; padding-bottom:30px;" class="hero-unit">
 
 	<img style="float:left; margin-top:-5px; margin-left:10px; margin-right:20px;" src='/assets/img/eID_logo_short.png'>
-     
-    
-      <h1>eID pārbaudes vietne</h1>
-      <p>Esi sveicināts eID pārbaudes vietnē!</p>
+      
+
+      <h1>eID-LV test site</h1>
+      <p>Welcome to Latvian eID test site!</p>
    
       </div>
       
        <div class="marketing">
 	   <div style="text-align: center;" class="marketing">
-	  <h2>Notiek pārbaude...</h2>
+	  <h2>Checking...</h2>
    
       	
       <p>
@@ -95,9 +97,9 @@
 			//if browser is ok, display users smarcard data
 			if($is_problematic_browser_error == false) { 
 		?>
-		<div class="alert alert-error"><strong>Kļūda!</strong> Sertifikāta pārbaudes kļūda. Pārliecinieties vai viedkaršu lasītājs pievienots datoram, viedkarte ievietota un ir uzstādīta eID starpniekprogrammatūra.<br>Pārstartējiet pārlūku un mēģiniet vēlreiz</div>
+		<div class="alert alert-error"><strong>Error!</strong> Certificate verification error. Please make sure that eID-LV is correctly inserted into smart card reader which is connected to computer with eID-LV middleware installed. <br>Restart the browser and try again.</div>
 		<br>
-		<a href="http://eidtstapa.pmlp.gov.lv/" class="btn btn-primary btn-large">Veikt atkārtotu pārbaudi</a>
+		<a href="http://eidtstapa.pmlp.gov.lv/en/" class="btn btn-primary btn-large">Test again</a>
 		<?php
 			} else {
 				

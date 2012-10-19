@@ -1,20 +1,14 @@
 <?php
-
-	// ja success.php megina pieklut ne caur https
+	//check.php is only available by HTTPS
+	//redirect user to main page if check.php is being accessed by HTTP
 	if ($_SERVER['HTTPS'] != "on") {
 	    header("Location: /");
 	    exit;
 	}  
 
+	//include check_browser() and get_smartcard_user() functions
 	include "./inc/functions.php";
-	
-	//echo "$_SERVER:<br>";
-	//echo "<pre>";
-	//print_r($_SERVER);
-	//echo "</pre>";
-	//echo "$_SERVER BEIGAS:<br>";
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +19,6 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <!-- Le styles -->
     <link href="../assets/css/bootstrap.css" rel="stylesheet">
     <style>
       body {
@@ -61,7 +54,6 @@
           <div class="nav-collapse">
             <ul class="nav">
               <li class="active"><a href="http://eidtstapa.pmlp.gov.lv">Home</a></li>
-              <li><a href="http://www.pmlp.gov.lv/lv/pakalpojumi/passes/eid.html">What is eID</a></li>
               
             </ul>
           </div><!--/.nav-collapse -->
@@ -78,8 +70,9 @@
     </div>
 
     <div class="container">
-	<div class="hero-unit">
-	<img style="float:left; margin:20px;" src='/assets/img/eID_logo.png'>
+	<div style="padding-top:30px; padding-bottom:30px;" class="hero-unit">
+
+	<img style="float:left; margin-top:-5px; margin-left:10px; margin-right:20px;" src='/assets/img/eID_logo_short.png'>
      
     
       <h1>eID pārbaudes vietne</h1>
@@ -92,11 +85,14 @@
       <p>
       	
 		<?php 
+		
+			//check browser
 			$is_problematic_browser_error = check_browser();
-			if($is_problematic_browser_error == false) { 
-				 
+			if($is_problematic_browser_error == false) {
+				 	 
+				//if browser is ok, display users smarcard data
+				//see inc/functions.php for smartcard_user array description
 				$smartcard_user = get_smartcard_user();
-				
 		?>
 				<h1><?php echo $smartcard_user['fullname'];?>, tavs eID darbojas korekti!</h1><br><br>
 				Šo informāciju mēs nolasījām no Tavā eID iekļautā autentifikācijas sertifikāta: <br>
@@ -107,6 +103,7 @@
 		<?php
 				
 			} else {
+				//if browser ir not ok, show browser error
 				echo $is_problematic_browser_error;	
 			};
 		?>	
@@ -114,10 +111,7 @@
     </div>
       
       <hr/>
-
-
-		  
-		  	     <!-- Footer
+	<!-- Footer
       ================================================== -->
       <footer style="position:relative;"class="footer">
 	  

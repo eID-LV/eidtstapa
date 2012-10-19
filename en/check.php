@@ -1,18 +1,15 @@
 <?php
 
-	// ja success.php megina pieklut ne caur https
+	//check.php is only available by HTTPS
+	//redirect user to main page if check.php is being accessed by HTTP
 	if ($_SERVER['HTTPS'] != "on") {
-	    header("Location: /");
+	    header("Location: /en");
 	    exit;
 	}  
 
-	include "./inc/functions.php";
-	
-	//echo "$_SERVER:<br>";
-	//echo "<pre>";
-	//print_r($_SERVER);
-	//echo "</pre>";
-	//echo "$_SERVER BEIGAS:<br>";
+	//include check_browser() and get_smartcard_user() functions
+	include "../inc/functions.php";
+
 ?>
 
 
@@ -20,7 +17,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>eID | eID pārbaudes vietne</title>
+    <title>eID-LV | eID-LV test site</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -57,48 +54,69 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="http://eidtstapa.pmlp.gov.lv">eID</a>
+          <a class="brand" href="http://eidtstapa.pmlp.gov.lv/en/check.php">eID</a>
           <div class="nav-collapse">
             <ul class="nav">
-              <li class="active"><a href="http://eidtstapa.pmlp.gov.lv">Home</a></li>
-              <li><a href="http://www.pmlp.gov.lv/lv/pakalpojumi/passes/eid.html">What is eID</a></li>
+              <li class="active"><a href="http://eidtstapa.pmlp.gov.lv/en">Home</a></li>
+
+
               
             </ul>
+			</div>
+			<div class="nav-collapse"style="float:right">
+				<ul class="nav">
+
+				 <li >
+				 <a href="/">LV</a>
+				</li>
+				 <li class="active"><a href="/en">EN</a></li>
+				 </ul>
           </div><!--/.nav-collapse -->
         </div>
+
+
       </div>
+
     </div>
 
     <div class="container">
-	<div class="hero-unit">
-	<img style="float:left; margin:20px;" src='/assets/img/eID_logo.png'>
-     
-    
-      <h1>eID pārbaudes vietne</h1>
-      <p>Sveicināti eID identifikācijas kartes pārbaudes vietnē!</p>
+	<div style="padding-top:30px; padding-bottom:30px;" class="hero-unit">
+
+	<img style="float:left; margin-top:-5px; margin-left:10px; margin-right:20px;" src='/assets/img/eID_logo_short.png'>
+      
+
+      <h1>eID-LV test site</h1>
+      <p>Welcome to Latvian eID test site!</p>
    
       </div>
       
              <div class="marketing">
 	   <div style="text-align: center;" class="marketing">
 	   
-	  <h1>Jūsu eID karte darbojas sekmīgi!</h1>
-
+	
       <p>
       	
 		<?php 
+		
+		    //check browser
 			$is_problematic_browser_error = check_browser();
 			if($is_problematic_browser_error == false) { 
 				 
-				$smartcard_user = get_smartcard_user();
-				
+				//if browser is ok, display users smarcard data 
+				//see inc/functions.php for smartcard_user array description
+				$smartcard_user = get_smartcard_user();		
 		?>
-				Sveicināti, <?php echo $smartcard_user['fullname'].", ".$smartcard_user['serial'];?>!<br/>
-				Jūsu kartes derīguma termiņš: <?php echo $_SERVER['SSL_CLIENT_V_END'];?><br/>
-				Vairāk par pieejamajiem pakalpojumiem: spiediet šeit.
-		<?php
+				<h1><?php echo $smartcard_user['fullname'];?>, Your eID-LV works correctly!</h1><br><br>
+				We have read this information from authentication certificate included in Your eID-LV: <br>
+				Name, surname: <?php echo $smartcard_user['fullname'];?><br>
+				Personal number: <?php echo $smartcard_user['serial'];?> <br>
+				Authentication certificate expiry date: <?php echo $_SERVER['SSL_CLIENT_V_END'];?><br/>
+
+	<?php
 				
 			} else {
+					
+			    //if browser ir not ok, show browser error	
 				echo $is_problematic_browser_error;	
 			};
 		?>	
@@ -106,21 +124,10 @@
     </div>
       
       <hr/>
-       <h2>Citas pārbaudes.</h2>
-	  <p> <a href="http://195.122.14.141">IIS test site</a>
-	  <p> <a href="https://195.122.14.142">IIS test Secure site</a>
-	      <p> Download eID logo here: <a href="/assets/img/eID_logo.jpg">JPG</a> or <a href="/assets/img/eID_logo.png">PNG transparent</a>
-
 		  
 		  	     <!-- Footer
       ================================================== -->
       <footer style="position:relative; top:100px"class="footer">
-	  <hr>
-        <p  class="pull-right"><a href="#">Back to top</a></p>
-        <p>Test site is running on Red Hat Enterprise Linux Server 6.2 (Santiago) as virtual guest on Vmware 7. Apache 2.2 OpenSSL . All rights reserved <a href="http://www.pmlp.gov.lv" target="_blank">PMLP</a> 2012. 
-	
-		 	<a href="http://eidtstiis.pmlp.gov.lv" target="_blank">eidtstiis.pmlp.gov.lv</a>
-	</p>
       </footer>
 		  
 		  </div>

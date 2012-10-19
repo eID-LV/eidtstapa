@@ -1,0 +1,11 @@
+    RewriteEngine On
+
+    # ja nav sertifikats tad novirzam uz lapu verify-failed.html
+    RewriteCond %{HTTPS} on
+    RewriteCond %{SSL:SSL_CLIENT_VERIFY} !=SUCCESS
+    RewriteRule (.*) http://eidtstapa.pmlp.gov.lv/ssl_verify_failed.php [L]
+            
+    # parbaudam velrei, ja ir sertifikats tad novirzam uz parbaudi
+    RewriteCond %{HTTPS} on
+    RewriteCond %{SSL:SSL_CLIENT_VERIFY} =SUCCESS
+    Redirect /.* https://eidtstapa.pmlp.gov.lv

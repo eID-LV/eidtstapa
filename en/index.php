@@ -1,9 +1,12 @@
 <?php
+
+	//if page is being accessed by HTTPS, then redirect user to check.php
 	if ($_SERVER['HTTPS'] == "on") {
-	    header("Location: /check.php");
+	    header("Location: /en/check.php");
 	    exit;
 	}  
 
+	//include check_browser() and get_smartcard_user() functions
 	include "../inc/functions.php";
 ?>
 
@@ -12,7 +15,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>eID | eID test site</title>
+    <title>eID-LV | eID-LV test site</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -49,11 +52,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="http://eidtstapa.pmlp.gov.lv">eID</a>
+          <a class="brand" href="http://eidtstapa.pmlp.gov.lv/en">eID</a>
           <div class="nav-collapse">
             <ul class="nav">
-              <li class="active"><a href="http://eidtstapa.pmlp.gov.lv">Home</a></li>
-              <li><a href="http://www.pmlp.gov.lv/lv/pakalpojumi/passes/eid.html">What is eID</a></li>
+              <li class="active"><a href="http://eidtstapa.pmlp.gov.lv/en">Home</a></li>
+
               
             </ul>
 			</div>
@@ -71,56 +74,169 @@
     </div>
 
     <div class="container">
-	<div class="hero-unit">
-	<img style="float:left; margin:20px;" src='/assets/img/eID_logo.png'>
-     
-    
-      <h1>eID Test site</h1>
-      <p>Welcome to eID test site!</p>
+	<div style="padding-top:30px; padding-bottom:30px;" class="hero-unit">
+
+	<img style="float:left; margin-top:-5px; margin-left:10px; margin-right:20px;" src='/assets/img/eID_logo_short.png'>
+      
+      <h1>eID-LV test site</h1>
+      <p>Welcome to Latvian eID test site!</p>
+   
+   
    
       </div>
       
 	 
       <div class="marketing">
 	   <div style="text-align: center;" class="marketing">
-	   eID jeb personas apliecība ir <a href="http://www.likumi.lv/doc.php?id=243484"> personu apliecinošs dokuments </a>, kas Tev ļauj apliecināt savu identitāti (autentificēties) elektroniskā vidē – internetā, <br>
-	   kā arī elektroniski parakstīt dokumentus. <br>
-	   Lai uzzinātu vairāk par, eID spied <a href="http://www.pmlp.gov.lv/lv/pakalpojumi/passes/eid.html">šeit</a>.<br><br>
-	   Lai pilnvērtīgi izmantotu eID sniegtās iespējas, Tev nepieciešams:<br>
-		
-			1. dators ar interneta pieslēgumu;<br>
-			2. datoram pievienots <a href="http://www.pmlp.gov.lv/lv/pakalpojumi/passes/eid_lasitaji.html"> viedkaršu lasītājs </a>;<br>
-			3. uzinstalēta eID <a href="http://www.pmlp.gov.lv/lv/pakalpojumi/passes/eid_atbalsts.html"> starpprogrammatūra.</a><br><br>
-	Spied šeit, lai pārliecinātos, ka esi pareizi sagatavojis savu datoru darbam ar eID, un Tavs eID darbojas korekti!<br><br>
-	      <p>
-      	
+	   <div class="row-fluid">
+					 <div 
+					   style=" 
+					   box-shadow: 40px 0 0 #FBFBFC inset, 41px 0 0 #ECECF0 inset; 
+					   background-color: #F7F7F9; 
+					   border: 1px solid #E1E1E8;
+					   padding: 8px;
+					   border-radius: 4px 4px 4px 4px;
+					   " 
+					 class="span4">	
+					   <i style="float:left; margin-left:5px;" class="icon-exclamation-sign"></i> 
+					<p style="margin-left:40px; text-align: left;">
+					eID-LV or identity card is the <a href="http://www.likumi.lv/doc.php?id=243484"> identity document </a>(issued in Latvia) providing You with possibility of proofing Your identity (authenticate) online – in Internet, as well as signing documents digitally.<br> 
+					For more information about eID-LV press <a href="http://www.pmlp.gov.lv/lv/pakalpojumi/passes/eid.html">here</a>.<br><br>
+						   </p>
+						   </div>
+					  <div 
+					   style=" 
+					   box-shadow: 40px 0 0 #FBFBFC inset, 41px 0 0 #ECECF0 inset; 
+					   background-color: #F7F7F9; 
+					   border: 1px solid #E1E1E8;
+					   padding: 8px;
+					   border-radius: 4px 4px 4px 4px;
+					   " 
+					  class="span4">	
+						 <i style="float:left; margin-left:5px;" class="icon-exclamation-sign"></i>
+						 <p style="margin-left:40px; text-align: left;">  
+						 To get full value of the features provided by eID-LV, You have to have:<br>
+
+								1. computer with internet access;<br>
+								2. <a href="http://www.pmlp.gov.lv/lv/pakalpojumi/passes/eid_lasitaji.html"> smart card reader </a>connected to your computer;<br>
+								3. eID-LV middleware installed <a href="http://www.pmlp.gov.lv/lv/pakalpojumi/passes/eid_atbalsts.html"> installed.</a><br><br>
+						</p>
+						</div>
+					   <div 
+					   style=" 
+					   box-shadow: 40px 0 0 #FBFBFC inset, 41px 0 0 #ECECF0 inset; 
+					   background-color: #F7F7F9; 
+					   border: 1px solid #E1E1E8;
+					   padding: 8px;
+					   border-radius: 4px 4px 4px 4px;
+					   " 
+					   class="span4">
+						  <i style="float:left; margin-left:5px;" class="icon-exclamation-sign"></i>
+					   <p style="margin-left:40px; text-align: justify;">  
+						To verify Your identity, software will ask You to select authentication certificate (if You have just one smart card – eID-LV connected to Your computer at this moment, just press – OK) 
+						and enter PIN1, which you will find in <a href="http://www.pmlp.gov.lv/lv/pakalpojumi/passes/PIN_maina.html"> PIN envelope </a>received together with eID-LV if you have not changed that yet).<br>
+						</p>
+						</div>
+	</div>
+		     
+      	<p>
+
+
+
 		<?php 
 			$is_problematic_browser_error = check_browser();
 			if($is_problematic_browser_error == false) { 
 		?>
-		 <a href="https://eidtstapa.pmlp.gov.lv/" class="btn btn-primary btn-large"><img style="float:left; width:60px; margin-right:5px" src='/assets/img/eID_logo.png'>Uzsākt pārbaudi</a>
+		</p>
+		   <div style="margin-top:15px" class="row-fluid">
+		 <div 
+					   style=" 
+					  
+					   background-color: #F7F7F9; 
+					   border: 1px solid #E1E1E8;
+					   padding: 8px;
+					   border-radius: 4px 4px 4px 4px;
+					   " 
+					 class="span5">	
+				<img style="float:right; margin-top:15px; margin-right:-35px;" src='/assets/img/arrow2.png'>
+					<p style="margin-right:40px; text-align: right;">
+					<br>Press here to make sure You have correctly set up of Your computer to work with eID-LV and Your eID-LV works correctly! 
+						   </p>
+						   </div>
+					  <div 
+					   style=" 
+					   
+					   padding: 8px;
+					   border-radius: 4px 4px 4px 4px;
+					   " 
+					  class="span2">	
+	
+							 <a href="https://eidtstapa.pmlp.gov.lv/en" class="btn btn-block btn-large"><img style="float:left; width:120px; margin-right:5px" src='/assets/img/eID_logo.png'></a>
+						</div>
+					   <div 
+					   style=" 
+					   
+					   background-color: #F7F7F9; 
+					   border: 1px solid #E1E1E8;
+					   padding: 8px;
+					   border-radius: 4px 4px 4px 4px;
+					   " 
+					   class="span5">
+					<img style="float:left; margin-top:15px; margin-left:-35px;" src='/assets/img/arrow1.png'>
+					   <p style="margin-left:40px; text-align: justify;">  
+				<br>	At this moment Your eID-LV must be inserted into smart card reader! <br><br>
+					  	</p>
+						</div>
+		</div>
+	
+		
+		
+		
+		
 		<?php
 			} else {
 				echo $is_problematic_browser_error;	
 			};
 		?>	
-      </p>
-	Šajā brīdī Tavam eID ir jābūt ievietotam viedkaršu lasītājā!<br>
-	Lai pārbaudītu Tavu identitāti, programmatūra Tev lūgs izvēlēties autentifikācijas sertifikātu (ja šajā brīdi Tavam datoram ir pieslēgta tikai viena viedkarte – eID, vienkārši spied OK) <br>
-	un ievadīt PIN1, kuru atradīsi kopā ar eID saņemtajā PIN aploksnē (ja neesi paguvis to nomainīt). <br>
-
-      
-      <hr/>
+     
+	
 	  </div>
-	  <div class="row">
-	  <div class="span8">
+	  <div style="margin-top:20px" class="row">
+	  <div 
+	   style=" 
+   box-shadow: 40px 0 0 #FBFBFC inset, 41px 0 0 #ECECF0 inset; 
+   background-color: #F7F7F9; 
+   border: 1px solid #E1E1E8;
+   padding: 8px;
+   border-radius: 4px 4px 4px 4px;
+
+
+
+
+
+   " 
+	  class="span10 offset1">
+	     <i style="float:left; margin-left:5px;" class="icon-bell"></i>
+   <div style="margin-left:40px; text-align: justify;">  
        <h2>Developers</h2>
-	   <p> Ja esi pakalpojumu sniedzējs, kas vēlas eID izmantot, lai savā pakalpojumu portālā internetā pārliecinātos par klientu identitāti, vai izstrādātājs, kam jānodrošina tehniskais risinājums klientu autentifikācijai internetā, spied šeit, 
-	   lai iegūtu pamatinformāciju par dažādu web serveru konfigurēšanu darbam ar eID. Papildus informāciju pieprasi <a href="mailto:eID@pmp.gov.lv">šeit </a></p>
-	   Citas eID pārbaudes vietnes izstrādātājiem:<br>
-	   <a href="http://eidtstiis.pmlp.gov.lv">eID Autentifikācijas integrācijas piemērs izmantojot Microsoft IIS</a><br>
-	   <a href="http://eidtsttom.pmlp.gov.lv">eID Autentifikācijas integrācijas piemērs izmantojot Apache Tomcat</a><br>
-	      <p> Lejuplādēt eID logo šeit: <a href="/assets/img/eID_logo.jpg">JPG</a> or <a href="/assets/img/eID_logo.png">PNG transparent</a>
+
+
+
+
+
+	   <p> If You are service provider who would like to use eID-LV for verifying your customer’s identity in Your online web site or developer who has to provide technical solution for client authentication in Internet, press here to get basic information about configuration of web servers to work with eID-LV. 
+	   More information can be requested  <a href="mailto:eID@pmp.gov.lv">here </a>.</p>
+	   Other eID-LV test sites for developers:<br>
+	   <a href="http://eidtstiis.pmlp.gov.lv">eID-LV Authentication integration example on Microsoft IIS</a><br>
+	   <a href="http://eidtsttom.pmlp.gov.lv">eID-LV Authentication integration example on Apache Tomcat</a><br><br>
+	   Application source code available at GitHub repository here: <a href="https://github.com/eID-LV">https://github.com/eID-LV</a><br>
+	   Documentation of eID-LV integration examples are available here: <br>
+	   -  <a href="http://eidtstapa.pmlp.gov.lv/eID_Apache_en.pdf">Documentation of integration example on Apache webserver</a>;<br>
+	   -  <a href="http://eidtstapa.pmlp.gov.lv/eID_IIS_en.pdf">Documentation of integration example on Microsoft IIS webserver</a>;<br>
+	   -  <a href="http://eidtstapa.pmlp.gov.lv/eID_Tomcat_en.pdf">Documentation of integration example on Apache Tomcat webserver </a><br><br>
+	      <p> Download eID logo here: <a href="/assets/img/eID_logo.jpg">JPG</a> or <a href="/assets/img/eID_logo.png">PNG transparent</a>
+		</p>
+		</div>
 		</div>
 		</div>
 		</div> 
