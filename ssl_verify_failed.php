@@ -83,12 +83,9 @@
 	   <div style="text-align: center;" class="marketing">
 	  <h2>Notiek pārbaude...</h2>
    
-      	
       <p>
-      	
-            	 	
+      	    	 	
 		<?php 
-		
 			//check browser
 			$is_problematic_browser_error = check_browser();
 			
