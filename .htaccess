@@ -1,11 +1,15 @@
     RewriteEngine On
 
-    # ja nav sertifikats tad novirzam uz lapu verify-failed.html
+    # First apache mod rewrite rule
+	# If page is being accessed by HTTPS but server did not receive certificate (no smartcard reader attached, wrong certificate, wrong pin entered etc.)
+	# Then redirect user to SSL verification failure page
     RewriteCond %{HTTPS} on
     RewriteCond %{SSL:SSL_CLIENT_VERIFY} !=SUCCESS
     RewriteRule (.*) http://eidtstapa.pmlp.gov.lv/ssl_verify_failed.php [L]
             
-    # parbaudam velrei, ja ir sertifikats tad novirzam uz parbaudi
+    # Second Apache mod rewrite rule 
+	# If page is being accessed by HTTPS and the SSL verification went well then redirect user to https://eidtstapa.pmlp.gov.lv/index.php 
+	# This rule is needed for these cases when user accidentally starts SSL verification from wrong page (previous session browser window left open or otherwise)
     RewriteCond %{HTTPS} on
     RewriteCond %{SSL:SSL_CLIENT_VERIFY} =SUCCESS
     Redirect /.* https://eidtstapa.pmlp.gov.lv
