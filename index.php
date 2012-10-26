@@ -232,7 +232,7 @@
 	  <hr>
         <p>Šī vietne darbojas uz Red Hat Enterprise Linux Server 6.2 (Santiago) as virtual guest on Vmware 7. Apache 2.2 OpenSSL. Visas tiesības aizsargātas <a href="http://www.pmlp.gov.lv" target="_blank">PMLP</a> 2012. 
 	
-		 	<a href="http://eidtstiis.pmlp.gov.lv" target="_blank">eidtstiis.pmlp.gov.lv</a>
+		 	<a href="http://eidtstapa.pmlp.gov.lv" target="_blank">eidtstapa.pmlp.gov.lv</a>
 	</p>
       </footer>
 		  

@@ -36,6 +36,32 @@ function check_browser() {
 	return false;
 }
 
+
+function check_browser_en() {
+	$browser = get_browser(null, true);
+	$error_text = "";
+	
+	//return error if mobile device is detected
+	if ($browser['ismobiledevice'] == '1') {
+		$error = '<div class="alert"><strong>Error!</strong> Test is not available from mobile devices.</div>';
+		return $error;
+	}
+	
+	//return error if Firefox is detected	
+	if ($browser["browser"] == "Firefox"){
+		$error = '<div class="alert"><strong>Error!</strong> Test is not available for Firefox browser.</div>';
+		return $error;		
+	}
+
+	//return error if Opera is detected
+	if ($browser["browser"] == "Opera"){
+		$error = '<div class="alert"><strong>Error!</strong> Test is not available for Opera browser.</div>';
+		return $error;		
+	}
+
+	return false;
+}
+
 /**
  * get_smartcard_user()
  * gets smartcard user info from $_SERVER variable
