@@ -92,7 +92,7 @@
 			//if browser is ok, display users smarcard data
 			if($is_problematic_browser_error == false) { 
 		?>
-		<div class="alert alert-error"><strong>Kļūda!</strong> Sertifikāta pārbaudes kļūda. Pārliecinieties vai viedkaršu lasītājs pievienots datoram, viedkarte ievietota un ir uzstādīta eID starpniekprogrammatūra.<br>Pārstartējiet pārlūku un mēģiniet vēlreiz</div>
+		<div class="alert alert-error"><strong>Kļūda!</strong> Sertifikāta pārbaudes kļūda. Pārliecinies vai eID pareizi ievietots viedkaršu lasītājā, kas pievienots datoram, uz kura uzinstalēta eID starpprogrammatūra.<br>Pārstartējiet pārlūku un mēģiniet vēlreiz</div>
 		<br>
 		<a href="http://eidtstapa.pmlp.gov.lv/" class="btn btn-primary btn-large">Veikt atkārtotu pārbaudi</a>
 		<?php

@@ -211,7 +211,7 @@
    <div style="margin-left:40px; text-align: justify;">  
        <h2>Izstrādātājiem</h2>
 	   <p> Ja esi pakalpojumu sniedzējs, kas vēlas eID izmantot, lai savā pakalpojumu portālā internetā pārliecinātos par klientu identitāti, vai izstrādātājs, kam jānodrošina tehniskais risinājums klientu autentifikācijai internetā, spied šeit, 
-	   lai iegūtu pamatinformāciju par dažādu web serveru konfigurēšanu darbam ar eID. Papildus informāciju pieprasi <a href="mailto:eID@pmp.gov.lv">šeit </a></p>
+	   lai iegūtu pamatinformāciju par dažādu web serveru konfigurēšanu darbam ar eID. Papildus informāciju pieprasi <a href="mailto:eID@pmlp.gov.lv">šeit </a></p>
 	   Citas eID pārbaudes vietnes izstrādātājiem:<br>
 	   <a href="http://eidtstiis.pmlp.gov.lv">eID Autentifikācijas integrācijas piemērs izmantojot Microsoft IIS</a><br>
 	   <a href="http://eidtsttom.pmlp.gov.lv">eID Autentifikācijas integrācijas piemērs izmantojot Apache Tomcat</a><br><br>

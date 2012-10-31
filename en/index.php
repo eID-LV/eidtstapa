@@ -225,7 +225,7 @@
 
 
 	   <p> If You are service provider who would like to use eID-LV for verifying your customer’s identity in Your online web site or developer who has to provide technical solution for client authentication in Internet, press here to get basic information about configuration of web servers to work with eID-LV. 
-	   More information can be requested  <a href="mailto:eID@pmp.gov.lv">here </a>.</p>
+	   More information can be requested  <a href="mailto:eID@pmlp.gov.lv">here </a>.</p>
 	   Other eID-LV test sites for developers:<br>
 	   <a href="http://eidtstiis.pmlp.gov.lv">eID-LV Authentication integration example on Microsoft IIS</a><br>
 	   <a href="http://eidtsttom.pmlp.gov.lv">eID-LV Authentication integration example on Apache Tomcat</a><br><br>
